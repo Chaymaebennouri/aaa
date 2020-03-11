@@ -1,20 +1,23 @@
-function somme(t){
-    var s=0;
-    console.log(t);
-    for(let i=0; i<t.length; i++){
-       s+=t[i];   
-    }
-  
-    return s;
+let nbr=Math.floor(Math.random()*100);
+console.log(nbr);
+let x=prompt("donnez un nbr:");
+x=parseInt(x);
+trou=false;
+con=0
+while(trou===false && con!=5){
 
+    if(x>nbr){
+        alert("ce nbr est grand !!!!!");
+     x=prompt("donnez un nbr:");
+     x=parseInt(x);
+    con ++}
+    else if(x<nbr){
+            alert("ce nbr est petit !!!!!");
+            x=prompt("donnez un nbr:");
+         x=parseInt(x);con ++}
+        else{
+            alert("GOOOOOD ANSWER!!!")
+            trou=true
+            con ++}
+   
 }
-var t=new Array();
-do{
-    var v=prompt("Donnez un nbr:");
-    v=parseInt(v);
-    console.log(v);
-    if(!isNaN(v)) t.push(v);
-}while(!(isNaN(v)));
-
-let som=somme(t);
-console.log(som);
