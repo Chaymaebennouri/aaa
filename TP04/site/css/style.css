@@ -1,0 +1,97 @@
+body{
+    background:  radial-gradient(circle, rgb(248, 248, 248), white);
+}
+h1{
+  color: rgb(255, 255, 255);
+}
+header{
+  padding: 10px;
+  border: 1px solide rgb(30, 219, 210);
+  margin-top: 10px;
+  width: 100%;
+  background-image: url(https://images.unsplash.com/photo-1530053969600-caed2596d242?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80)
+}
+nav{ 
+  position: sticky;
+  background-color: rgb(229, 223, 235);
+  flex:space-araound;
+  border-radius: 10px;
+  border: 3px solid rgb(229, 223, 235);
+ 
+}
+h2 h1{
+    color : white;
+    text-align: center;
+    background-color: black;
+    cursor: pointer;
+}
+
+p{
+    background-color: rgb(210, 187, 231);
+    text-align: left; 
+    border-radius: 10px;
+  border: 3px solid #BADA55;
+}
+li{
+    list-style: none;
+    display: inline-block;
+}
+.text{
+    border:1px dashed green;
+}
+.actif{
+    color:maroon
+}
+title{
+    border: 1px dashedblack;
+    background-image: url(https://images.unsplash.com/photo-1530053969600-caed2596d242?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80)
+}
+#module{
+    border-radius: 5px 20px 5px;
+  background: rgb(221, 228, 198);
+    width: 90px;
+    margin: 8px;
+    float: none;
+    border-image-slice: 20;
+    border-image-source: url(border.png);
+  border-image-slice: 20;
+  box-shadow: #111111;
+  border-radius: 10px;
+  
+  }
+#images{
+    z-index: -1;
+    width: 320px;
+    margin: 8px;
+    float: none;
+    border-image-slice: 20;
+    border-image-source: url(border.png);
+  border-image-slice: 20;
+}
+footer{
+    text-align: center;
+    background-color: rgb(143, 211, 54);
+    right: 0;
+}
+
+nav > a{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(3, 2, 1);
+
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #111111;
+    text-align: left;
+    padding: 1px;
+  }
+
+li, ol{
+
+}
