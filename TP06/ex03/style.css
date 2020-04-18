@@ -1,0 +1,14 @@
+ #conteneur>div {
+    border: 2px solid orangered;
+    width: 100px;
+    height: 140px;
+    text-align: center;
+    margin: 20px;
+    background-color: rgb(202, 241, 26);
+
+}
+#conteneur{
+    display: flex;
+    vertical-align: middle;
+    flex-wrap: wrap;
+}

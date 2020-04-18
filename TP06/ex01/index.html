@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercice 1</title>
+    </head>
+    <body>
+        <div>
+            <button onclick="getNewColor()">Click to see new background Color</button>
+        </div>        
+        <script type="text/javascript">
+
+            function getNewColor(){
+                var symbols,color;
+                symbols="0123456789ABCDEF";
+                color="#";
+                for (var i = 0; i < 6;i++){
+                    color=color+symbols[Math.floor(Math.random()*16)];
+
+                } 
+                document.body.style.background = color; 
+            }
+
+        </script>
+    </body>
+</html>
