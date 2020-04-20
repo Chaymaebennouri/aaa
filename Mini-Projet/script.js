@@ -1,68 +1,20 @@
+window.addEventListener('load',init)
 const testwrapper = document.querySelector('.Input');
 const testarea = document.querySelector('#textArea');
-const origintext = document.querySelector('.Display').innerHTML
+const origintext = document.querySelector('.Display');
 const resetbutton = document.querySelector('.reset');
 const thetimer = document.querySelector('.time');
 
-let tiime=[0,0,0,0];
-let interval;
-let timerunning = false;
 
-function zero(Time){
-  if(Time<=9){
-    Time = "0"+ Time;
-  }
-  return Time;
+const para = [
+  'JavaScript est un langage de programmation qui permet d’implémenter des mécanismes complexes sur une page web.', ' À chaque fois qu’une page web fait plus que simplement afficher du contenu statique — afficher du contenu mis à jour à des temps déterminés, des cartes interactives, des animations 2D/3D, des menus vidéo défilants.', 'JavaScript a de bonnes chances d’être impliqué. C’est la troisième couche des technologies standards du web, les deux premières (HTML et CSS) étant couvertes bien plus en détail dans d’autres tutoriels sur MDN.','HTML est un langage de balises utilisé pour structurer et donner du sens au contenu web.', 'CSS est un langage de règles de style utilisé pour mettre en forme le contenu HTML.', 'Quand la page se charge, les codes HTML, CSS et JavaScript s\'exécutent dans un environnement (l\'onglet du navigateur). C\'est un peu comme une usine qui prend des matières premières (le code) et sort un produit (la page web).', 'Le JavaScript est exécuté par le moteur JavaScript du navigateur, après que le HTML et le CSS ont été assemblés et combinés en une page web.', 'Le JavaScript est appliqué à votre page HTML un peu comme le CSS.', 'JavaScript désigne un langage de développement informatique, et plus précisément un langage de script orienté objet.', 'Le Javascript est un langage informatique qui est utilisé sur de très nombreux sites web.', 'L\'HTML est un langage informatique utilisé sur l\'internet. Ce langage est utilisé pour créer des pages web.', 'L\'HTML est ce qui permet à un créateur de sites Web de gérer la manière dont le contenu de ses pages Web va s\'afficher sur un écran, via le navigateur.','L\'Hypertext Markup Language, plus communément désigné sous son acronyme HTML, est employé pour faire référence à un langage informatique qui permet de mettre sur internet des données rédigées.','Les feuilles de styles (CSS) sont un langage qui permet de gérer la présentation d\'une page Web. ','Le langage CSS est une recommandation du World Wide Web Consortium (W3C), au même titre que HTML ou XML','Le but de CSS est séparer la structure d\'un document HTML et sa présentation. En effet, avec HTML, on peut définir à la fois la structure et la présentation.'
+];
+
+function init() {
+  show(para);
 }
-
-function timer(){
-  let currentTime=zero(tiime[0])+":"+zero(tiime[1])+":"+zero(tiime[2]);
-  thetimer.innerHTML=currentTime;
-  tiime[3]++;
-
-  tiime[0] = Math.floor((tiime[3]/100)/60);
-  tiime[1] = Math.floor((tiime[3]/100) - (tiime[0]*60));
-  tiime[2] = Math.floor(tiime[3] - (tiime[1] * 100)-(tiime[0] * 6000));
+function show(para){
+  const randIndex =Math.floor(Math.random()* para.length);
+  origintext.innerHTML = para[randIndex];
+ 
 }
-
-function restar(){
-  clearInterval(interval);
-  interval =null;
-  tiime=[0,0,0,0];
-  thetimer = false;
-  testarea.value="",
-  thetimer.innerHTML="00:00:00";
-  testwrapper.style.borderColor='green';
-}
-
-function spel(){
-  let textenterde=textarea.value;
-  let origintextmatch = origintext.substring(0,textentered.length);
-
-  if(textentered == origintext){
-    testwrapper.style.borderColor ='orange';
-    clearInterval(interval);
-  }else{
-    if(textentered == originetextmatch){
-      testwrapper.style.borderColor ='green';
-    }else{
-      testwrapper.style.borderColor='red';
-    }
-  }
-
-}
-
-
-
-function start() { 
-  let textentered = testarea.value.length;
-  if(textenteredlength === 0){
-    timerunning = true;
-    interval=setInterval(timer,10);
-
-  }
-}
-
-testarea.addEventListener('keypress',start,false);
-testarea.addEventListener('keyup',spel,false);
-resetbutton.addEventListener('click', restar ,false);

@@ -40,7 +40,7 @@ h3{
 .time{
     width: 190px;
     background-color: yellow;
-    padding: 0px;
+    padding: 2px;
     letter-spacing: 6px;
     align-content: center;
     border-radius: 20px;
@@ -66,4 +66,7 @@ h3{
 #textArea{
     height: 200px;
     width: 100%;
+}
+p{
+    color: whitesmoke;
 }
