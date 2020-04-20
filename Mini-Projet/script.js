@@ -35,7 +35,18 @@ function reset(){
 
 function spellcheck(){
   let textentered = testarea.value;
-  console.log(textentered);
+  let origintextmatch = origintext.innerHTML.substring(0,textentered.length);
+
+  if(textentered == origintext){
+    testwrapper.style.borderColor = 'orange';
+
+  }else{
+    if(textentered == origintextmatch){
+      testwrapper.style.borderColor = 'green';
+    }else{
+      testwrapper.style.borderColor = 'red';
+    }
+  }
 }
 
 function start(){
