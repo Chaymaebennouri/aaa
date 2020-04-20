@@ -8,8 +8,16 @@ const thetimer = document.querySelector('.time');
 
 let timer=[0,0,0,0];
 
+
+function zero(time){
+  if (time<=9){
+    time="0" + time;
+  }
+  return time;
+  
+}
 function runTimer(){
-  let currentTime = timer[0]+":"+timer[1]+":"+timer[2];
+  let currentTime = zero(timer[0])+":"+zero(timer[1])+":"+zero(timer[2]);
   thetimer.innerHTML = currentTime;
   timer[3]++;
 
