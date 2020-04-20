@@ -30,17 +30,17 @@ h3{
     margin-top: 30px;
     padding: 20px 20px;
     border-radius: 10px;
-    background-color: dimgray;
-    color: white;
+    background-color: whitesmoke;
+    color: rgb(0, 0, 0);
 }
 .text{
     height: 100px;
     margin: 0;
 }
 .time{
-    width: 190px;
+    width: 200px;
     background-color: yellow;
-    padding: 2px;
+    padding: 25px;
     letter-spacing: 6px;
     align-content: center;
     border-radius: 20px;
@@ -58,15 +58,15 @@ h3{
     font-weight: bold;
 }
 .Input{
-    height: 205px;
+    height: 209px;
     margin:10px;
-    border: 3px solid green;
-    border-radius: 10px;
+    border: 6px solid green;
+    border-radius: 15px;
 }
 #textArea{
     height: 200px;
     width: 100%;
 }
 p{
-    color: whitesmoke;
+    color: black;
 }

@@ -33,20 +33,23 @@ function reset(){
   interval = null;
   timer = [0,0,0,0];
   timerunning = false;
+  
   testarea.value = "";
   thetimer.innerHTML = "00:00:00";
   origintext.value = show(para);
+
   testwrapper.style.borderColor = 'green';
   
 }
 
 function spellcheck(){
+  
   let textentered = testarea.value;
   let origintextmatch = origintext.innerHTML.substring(0,textentered.length);
 
   if(textentered == origintext){
     testwrapper.style.borderColor = 'orange';
-   
+    
   }else{
     if(textentered == origintextmatch){
       testwrapper.style.borderColor = 'green';
@@ -55,7 +58,8 @@ function spellcheck(){
       testwrapper.style.borderColor = 'red';
     }
   }
-} 
+  
+}
 
 function start(){
 
@@ -63,7 +67,9 @@ function start(){
   if(textenteredlenghth === 0){
     timerunning = true;
     interval =setInterval(runTimer,10);
+    ;
   }
+  
 }
 
 testarea.addEventListener('keypress',start, false);
