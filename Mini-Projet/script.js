@@ -7,15 +7,14 @@ const thetimer = document.querySelector('.time');
 
 
 let timer=[0,0,0,0];
-
+let interval;
+let timerunning = false;
+var randIndex;
 
 function zero(time){
   if (time<=9){
-    time="0" + time;
-  }
-  return time;
-  
-}
+    time="0" + time;}
+  return time;}
 function runTimer(){
   let currentTime = zero(timer[0])+":"+zero(timer[1])+":"+zero(timer[2]);
   thetimer.innerHTML = currentTime;
@@ -30,7 +29,15 @@ function runTimer(){
 }
 
 function reset(){
-  console.log('reset button was pressed');
+  clearInterval(interval);
+  interval = null;
+  timer = [0,0,0,0];
+  timerunning = false;
+  testarea.value = "";
+  thetimer.innerHTML = "00:00:00";
+  origintext.value = show(para);
+  testwrapper.style.borderColor = 'green';
+  
 }
 
 function spellcheck(){
@@ -39,21 +46,23 @@ function spellcheck(){
 
   if(textentered == origintext){
     testwrapper.style.borderColor = 'orange';
-
+   
   }else{
     if(textentered == origintextmatch){
       testwrapper.style.borderColor = 'green';
+      
     }else{
       testwrapper.style.borderColor = 'red';
     }
   }
-}
+} 
 
 function start(){
 
   let textenteredlenghth = testarea.value.length;
   if(textenteredlenghth === 0){
-    setInterval(runTimer,10);
+    timerunning = true;
+    interval =setInterval(runTimer,10);
   }
 }
 
@@ -70,7 +79,8 @@ function init() {
   show(para);
 }
 function show(para){
-  const randIndex =Math.floor(Math.random()* para.length);
+  randIndex =Math.floor(Math.random()* para.length);
   origintext.innerHTML = para[randIndex];
+  testarea.value = "";
  
 }
