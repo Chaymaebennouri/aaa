@@ -4,19 +4,27 @@
       <title>Exercice 4</title>
       <meta charset="UTF-8">
       <link rel="stylesheet" href="style.css">
-      <script src="script.js"></script>
-      <script>
-         function changeHeure()
-            {
-            var span = document.getElementById("horloge");
-            if (span==null) return; 
-            while (span.firstChild) span.removeChild(span.firstChild); 
-            afficheHeure();
-            setTimeout(changeHeure, 1000);
-            }
+      <script type="text/javascript">
+         function changeHeure(){
+             var t = 1000; 
+             setTimeout('afficheHeure()',t)
+         }
+         
+         function afficheHeure() {
+             var date = new Date()
+             var h = date.getHours();
+             var m = date.getMinutes();
+             var s = date.getSeconds();
+             if( h < 10 ){ h = '0' + h; }
+             if( m < 10 ){ m = '0' + m; }
+             if( s < 10 ){ s = '0' + s; }
+             var time = h + ':' + m + ':' + s
+             document.getElementById('horloge').innerHTML = time;
+             changeHeure();
+          }
       </script> 
    </head>
-   <body onload="changeHeure()">
+   <body onload="afficheHeure()">
       <main>
          <div class="horloge">
             <span class="data" id="horloge"></span>
