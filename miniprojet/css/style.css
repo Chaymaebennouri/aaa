@@ -2,20 +2,24 @@ body{
     margin: 0px;
 }
 header{
-
     background-color: rgb(41, 160, 61);
     
 }
+#logo{
+    width: 200px;
+    margin: 0;
+}
 #main{
+    padding-top: 10px;
     display: flex;
     justify-content: space-between;
 }
 
 h1{
     text-align: center;
-    
 }
-h3{
+p{
+    padding-top: 10px;
     text-align: right;
 }
 #container{
@@ -30,6 +34,7 @@ h3{
     overflow: auto;
     height: 70vh;
     border-style: groove;
+
 }
 #content{
     width: 70%;
@@ -45,7 +50,9 @@ footer{
     background-color:  rgb(41, 160, 61);
 }
 #side div{
-    
-    background:  rgb(58, 184, 79) ;
-    background-clip: padding-box;
+    display: flex;
+    border: 1px solid white;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 1px;
+    background:  rgb(66, 224, 150) ;
 }

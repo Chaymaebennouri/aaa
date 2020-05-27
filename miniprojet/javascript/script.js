@@ -1,5 +1,6 @@
 var ctx = document.getElementById('myChart').getContext('2d');
-var list = document.getElementById('side')
+var list = document.getElementById('side');
+
 
 function divClecked(e){
     console.log(e.target.innerHTML)
@@ -27,37 +28,13 @@ httpReq.send()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 var myChart = new Chart(ctx, {
     type: 'line',
-    data: {
-        labels: ['Red', 'Blue', 'Green'],
-        datasets: [{
-            label: '1' ,
-            data: [12, 19, 3, 5, 2, 3],
-
-        },
-        {   label: '2' ,
-            data: [12, 19, 13, 5, 22, 3],}
-    ]    
+    data: { 
+        Confirmed :0,
+        Deaths :0,
+        Recovered :0,
+        Active :0,
     },
-    options: {
-        tooltips: {
-            mode: 'index'
-        }
-    }
-});
+            
+})
