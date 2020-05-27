@@ -1,11 +1,13 @@
+body{
+    margin: 0px;
+}
 header{
-    font-size: 100%;
+
     background-color: rgb(41, 160, 61);
     
 }
 #main{
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
 }
 
@@ -18,26 +20,32 @@ h3{
 }
 #container{
     display: flex;
-    flex-wrap: wrap;    
+    margin: 20px;
+    justify-content: space-around;
+ 
 }
 #side{
-    float: left;
-    padding: 10px;
-    height: 350px;
-    width: 20%;
-    margin: 20px;
+    width: 20vw;
+    padding: 5px;
+    overflow: auto;
+    height: 70vh;
     border-style: groove;
 }
 #content{
     width: 70%;
-    height: 400px;
-    margin: 20px;
-    border-style: groove;
+    height: 70vh;
+    overflow: auto;
+    margin: 0px;
+    border: groove;
 
 }
-
 
 footer{
     text-align: center;
     background-color:  rgb(41, 160, 61);
+}
+#side div{
+    
+    background:  rgb(58, 184, 79) ;
+    background-clip: padding-box;
 }
