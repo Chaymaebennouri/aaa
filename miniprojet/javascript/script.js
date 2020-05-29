@@ -1,10 +1,19 @@
 var ctx = document.getElementById('myChart').getContext('2d');
 var list = document.getElementById('side');
 
+let confermed=[];
+    recovered=[];
+    deaths =[];
+    active=[];
+    
+function divClecked(e){  
+    let httpReq=new XMLHttpRequest()
+    httpReq.open("GET","https://api.covid19api.com/dayone/country/"+e.target.setAttribute,true)
 
-function divClecked(e){
-    console.log(e.target.innerHTML)
+httpReq.send()
 }
+
+
 let httpReq=new XMLHttpRequest()
 httpReq.open("GET","https://api.covid19api.com/countries",true)
 httpReq.onreadystatechange=function(){
@@ -21,20 +30,3 @@ httpReq.onreadystatechange=function(){
 }
 httpReq.send()
 
-
-
-
-
-
-
-
-var myChart = new Chart(ctx, {
-    type: 'line',
-    data: { 
-        Confirmed :0,
-        Deaths :0,
-        Recovered :0,
-        Active :0,
-    },
-            
-})
