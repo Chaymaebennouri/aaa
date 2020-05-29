@@ -7,10 +7,12 @@ let confermed=[];
     active=[];
     
 function divClecked(e){  
-    let httpReq=new XMLHttpRequest()
-    httpReq.open("GET","https://api.covid19api.com/dayone/country/"+e.target.setAttribute,true)
+//     let httpReq=new XMLHttpRequest()
+//     httpReq.open("GET","https://api.covid19api.com/dayone/country/"+e.target.setAttribute.ISO2,true)
 
-httpReq.send()
+// httpReq.send()
+var codecountry=e.target.attributes;
+console.log(codecountry);
 }
 
 
