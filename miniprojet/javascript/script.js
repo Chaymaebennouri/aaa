@@ -1,19 +1,87 @@
 var ctx = document.getElementById('myChart').getContext('2d');
 var list = document.getElementById('side');
 
-let confermed=[];
-    recovered=[];
-    deaths =[];
-    active=[];
-    
-function divClecked(e){  
-//     let httpReq=new XMLHttpRequest()
-//     httpReq.open("GET","https://api.covid19api.com/dayone/country/"+e.target.setAttribute.ISO2,true)
 
-// httpReq.send()
-var codecountry=e.target.attributes;
-console.log(codecountry);
+
+function divClecked(e){  
+    let httpReq=new XMLHttpRequest()
+    let codecountry=e.target.attributes.id.nodeValue;
+    
+    httpReq.open("GET","https://api.covid19api.com/dayone/country/"+codecountry,true)
+    httpReq.onreadystatechange=function(){
+        if(httpReq.readyState==4 && httpReq.status==200){
+            let data=JSON.parse(httpReq.response);
+
+            var Confirmed=new Array;
+            for(i in data){
+            Confirmed.push(data[i].Confirmed)
+            }
+        
+            var Deaths=new Array;
+            for(i in data){
+            Deaths.push(data[i].Deaths)
+            }
+        
+            var Recovered=new Array;
+            for(i in data){
+            Recovered.push(data[i].Recovered)
+            }
+        
+            var Active=new Array;
+            for(i in data){
+            Active.push(data[i].Active)
+            }
+        
+            var date=new Array();
+            for(i in data){
+            // date.push(data[i].Date)
+            date.push(data[i].Date)
+            
+            }
+            console.log(date)
+            var chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: "Confirmés",
+                        backgroundColor: 'rgba(183,197,242,0.2)',
+                        borderColor: 'Blue',
+                        data: Confirmed,
+                    },{
+                        label: "Géris",
+                        backgroundColor: 'rgba(183,242,197,0.2)',
+                        borderColor: 'Green',
+                        data: Recovered,
+                    },{
+                        label: "Décés",
+                        backgroundColor: 'rgba(242,183,183,0.2)',
+                        borderColor: 'Red',
+                        data: Deaths,
+                    },{
+                        label: "Active",
+                        backgroundColor: 'rgba(248,248,181,0.2)',
+                        borderColor: 'Yellow',
+                        data: Active,
+                    },],
+                    labels: date ,
+                },
+
+                options: {
+                    title: {
+                        display: true,
+                        text: e.target.innerHTML,
+                    }
+                }
+            });
+
+        }
+    }
+        
+            
+
+httpReq.send();
 }
+
 
 
 let httpReq=new XMLHttpRequest()
