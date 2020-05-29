@@ -38,7 +38,8 @@ function divClecked(e){
             date.push(data[i].Date)
             
             }
-            console.log(date)
+            
+    
             var chart = new Chart(ctx, {
                 type: 'line',
                 data: {
