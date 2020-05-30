@@ -34,12 +34,9 @@ function divClecked(e){
         
             var date=new Array();
             for(i in data){
-            // date.push(data[i].Date)
             date.push(data[i].Date)
-            
             }
             
-    
             var chart = new Chart(ctx, {
                 type: 'line',
                 data: {
@@ -83,6 +80,12 @@ function divClecked(e){
 httpReq.send();
 }
 
+const months=['01','02','03','04','05','06','07','08','09','10','11','12'];
+function formadate(dateString){
+    let Dates= new date(dateString);
+    return `${date.getDate()} ${months[date.getMonth()]}`;
+
+}
 
 
 let httpReq=new XMLHttpRequest()

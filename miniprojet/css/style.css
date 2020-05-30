@@ -3,23 +3,21 @@ body{
 }
 header{
     background-color: rgb(41, 160, 61);
-    
-}
-#logo{
-    width: 200px;
-    margin: 0;
-}
-#main{
-    padding-top: 10px;
+    align-items: center;
     display: flex;
     justify-content: space-between;
 }
+#logo{
+    margin: 0px;
+    width: 200px;
 
-h1{
+}
+
+#title{
     text-align: center;
 }
-p{
-    padding-top: 10px;
+#IDSD{
+    padding: 10px;
     text-align: right;
 }
 #container{
@@ -40,16 +38,20 @@ p{
     width: 70%;
     height: 70vh;
     overflow: auto;
-    margin: 0px;
     border: groove;
+    padding: 5px;
 
 }
 
 footer{
+    position: fixed;
+    bottom: 0px;
+    width: 100vw;
     text-align: center;
     background-color:  rgb(41, 160, 61);
 }
 #side div{
+    
     display: flex;
     border: 1px solid white;
     font-family: 'Times New Roman', Times, serif;
