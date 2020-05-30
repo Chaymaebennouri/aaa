@@ -12,6 +12,8 @@ function divClecked(e){
         if(httpReq.readyState==4 && httpReq.status==200){
             let data=JSON.parse(httpReq.response);
 
+            
+            
             var Confirmed=new Array;
             for(i in data){
             Confirmed.push(data[i].Confirmed)
@@ -32,11 +34,8 @@ function divClecked(e){
             Active.push(data[i].Active)
             }
         
-            var date=new Array();
-            for(i in data){
-            date.push(data[i].Date)
-            }
-            
+            const t=data.map(data=>`${new Date(data.Date).getDate()}/${new Date(data.Date).getMonth()+1}`);            
+
             var chart = new Chart(ctx, {
                 type: 'line',
                 data: {
@@ -61,7 +60,7 @@ function divClecked(e){
                         borderColor: 'Yellow',
                         data: Active,
                     },],
-                    labels: date ,
+                    labels: t ,
                 },
 
                 options: {
@@ -78,13 +77,6 @@ function divClecked(e){
             
 
 httpReq.send();
-}
-
-const months=['01','02','03','04','05','06','07','08','09','10','11','12'];
-function formadate(dateString){
-    let Dates= new date(dateString);
-    return `${date.getDate()} ${months[date.getMonth()]}`;
-
 }
 
 
