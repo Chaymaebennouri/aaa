@@ -11,9 +11,9 @@ function divClecked(e){
     httpReq.onreadystatechange=function(){
         if(httpReq.readyState==4 && httpReq.status==200){
             let data=JSON.parse(httpReq.response);
+            
+            var n=e.target.innerHTML;
 
-            
-            
             var Confirmed=new Array;
             for(i in data){
             Confirmed.push(data[i].Confirmed)
@@ -66,7 +66,7 @@ function divClecked(e){
                 options: {
                     title: {
                         display: true,
-                        text: e.target.innerHTML,
+                        text: n,
                     }
                 }
             });
