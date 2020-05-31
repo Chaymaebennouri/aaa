@@ -5,7 +5,7 @@ var list = document.getElementById('side');
 
 function divClecked(e){  
     let httpReq=new XMLHttpRequest()
-    let codecountry=e.target.attributes.id.nodeValue;
+    let codecountry=e.target.getAttribute("id");
     
     httpReq.open("GET","https://api.covid19api.com/dayone/country/"+codecountry,true)
     httpReq.onreadystatechange=function(){
@@ -70,7 +70,7 @@ function divClecked(e){
                     }
                 }
             });
-
+            
         }
     }
         
@@ -85,7 +85,8 @@ httpReq.open("GET","https://api.covid19api.com/countries",true)
 httpReq.onreadystatechange=function(){
     if(httpReq.readyState==4 && httpReq.status==200){
         let resp=JSON.parse(httpReq.response)
-        resp.forEach(e => {
+        raw=resp.sort((a,b)=>a.Country<b.Country?-1:1)
+        raw.forEach(e => {
             let d=document.createElement("div")
             d.setAttribute('id',e.ISO2)
             d.innerHTML=e.Country

@@ -53,8 +53,11 @@ footer{
 #side div{
     
     display: flex;
-    border: 1px solid white;
+    margin: 2px;
     font-family: 'Times New Roman', Times, serif;
     padding: 1px;
     background:  rgb(66, 224, 150) ;
+}
+#side div:hover{
+    background-color: rgb(43, 139, 95) ;
 }

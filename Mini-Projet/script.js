@@ -1,9 +1,9 @@
 window.addEventListener('load',init)
-const testwrapper = document.querySelector('.Input');
+const testwrapper = document.querySelector('.test-wrapper');
 const testarea = document.querySelector('#textArea');
-const origintext = document.querySelector('.Display');
-const resetbutton = document.querySelector('.reset');
-const thetimer = document.querySelector('.time');
+const origintext = document.querySelector('.origin-text p').innerHTML;
+const resetbutton = document.querySelector('#reset');
+const thetimer = document.querySelector('.timer');
 
 
 let timer=[0,0,0,0];
