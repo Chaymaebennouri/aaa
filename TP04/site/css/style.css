@@ -1,23 +1,26 @@
 body{
-  background:  radial-gradient(circle, rgb(141, 165, 243), white);
+
+  background:  radial-gradient( rgb(141, 165, 243),rgb(82, 83, 88));
 }
 h1{
-  color: rgb(255, 255, 255);
+  color: white;
 }
 header{
   padding: 10px;
-  border: 1px solide rgb(30, 219, 210);
-  margin-top: 10px;
+  border: 1px solide rgb(30, 219, 210,0,1);
+  margin: 0px;
   width: 100%;
-  background-image: url(https://images.unsplash.com/photo-1530053969600-caed2596d242?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80)
+  height: 100%;
+  background-image: url(https://images.unsplash.com/photo-1530053969600-caed2596d242?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80);
 }
-nav{ 
+
+p{ 
+  margin: 0px;
+  position: -webkit-sticky;
   position: sticky;
-  background-color: rgb(229, 223, 235);
-  flex: space-around;
-  border-radius: 10px;
-  border: 3px solid rgb(229, 223, 235);
- 
+  top: 0;
+  background-color: #b1e1e2;
+  border: 2px solid rgb(1, 47, 253);
 }
 h2 h1{
   color : white;
@@ -28,31 +31,25 @@ h2 h1{
 #contenair{
   margin: 0;
   display: flex;
-  flex: space-around;
-}
-p{
-  background-color: rgb(210, 187, 231);
-  text-align: left; 
-  border-radius: 10px;
-  border: 3px solid #BADA55;
+  flex: space-evenly;
 }
 li{
   list-style: none;
   display: inline-block;
 }
 .text{
-  border:1px dashed green;
+  border:1px dashed rgb(4, 0, 255);
 }
 .actif{
-  color:maroon
+  color:rgb(55, 0, 255)
 }
 title{
-  border: 1px dashedblack;
+  border: 1px dashed black;
   background-image: url(https://images.unsplash.com/photo-1530053969600-caed2596d242?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80)
 }
 #module{
   border-radius: 5px 20px 5px;
-  background: rgb(221, 228, 198);
+  background:white;
   width: 90px;
   margin: 8px;
   float: none;
@@ -68,6 +65,7 @@ title{
   border-radius: 100px;
   z-index: -1;
   width: 320px;
+  height: 200px;
   margin: 8px;
   float: none;
   border-image-slice: 20;
@@ -76,14 +74,14 @@ title{
 }
 footer{
   text-align: center;
-  background-color: rgb(143, 211, 54);
+  background-color: rgb(4, 0, 255);
   right: 0;
 }
 
 nav > a{
   font-size: 20px;
   font-weight: bold;
-  color: rgb(3, 2, 1);
+  color: rgb(24, 135, 226);
 
 }
 table {
